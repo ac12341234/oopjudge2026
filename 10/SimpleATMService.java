@@ -1,14 +1,14 @@
-public class Simple_ATM_Service implements ATM_Service {
+public class SimpleATMService implements ATMService {
 
 	/**
 	 * 檢查餘額
 	 */
     @Override
-    public boolean checkBalance(Account account, int money) throws ATM_Exception {
+    public boolean checkBalance(Account account, int money) throws ATMException {
         if (account.getBalance() >= money) {
             return true;
         } else {
-            throw new ATM_Exception(ATM_Exception.ExceptionTYPE.BALANCE_NOT_ENOUGH);
+            throw new ATMException(ATMException.ExceptionTYPE.BALANCE_NOT_ENOUGH);
         }
     }
 
@@ -16,11 +16,11 @@ public class Simple_ATM_Service implements ATM_Service {
      * 檢查金額是否合法（1000 的倍數）
      */
     @Override
-    public boolean isValidAmount(int money) throws ATM_Exception {
+    public boolean isValidAmount(int money) throws ATMException {
         if (money % 1000 == 0) {
             return true;
         } else {
-            throw new ATM_Exception(ATM_Exception.ExceptionTYPE.AMOUNT_INVALID);
+            throw new ATMException(ATMException.ExceptionTYPE.AMOUNT_INVALID);
         }
     }
 
@@ -36,7 +36,7 @@ public class Simple_ATM_Service implements ATM_Service {
                 account.setBalance(updatedBalance);
                 System.out.println("updated balance : " + updatedBalance);
             }
-        } catch (ATM_Exception e) {
+        } catch (ATMException e) {
             System.out.println(e.getMessage());
             System.out.println("updated balance : " + account.getBalance());
         }
