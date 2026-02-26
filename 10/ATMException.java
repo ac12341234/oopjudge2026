@@ -1,11 +1,11 @@
-public class ATM_Exception extends Exception {
+public class ATMException extends Exception {
 
     public enum ExceptionTYPE { BALANCE_NOT_ENOUGH, AMOUNT_INVALID }
 
     // 儲存例外狀況
     private ExceptionTYPE exceptionCondition;
 
-    public ATM_Exception(ExceptionTYPE e) {
+    public ATMException(ExceptionTYPE e) {
         super("ATM_Exception");
         this.exceptionCondition = e;
     }
