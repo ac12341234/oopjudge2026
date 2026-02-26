@@ -8,7 +8,7 @@ public class SimpleATMService implements ATMService {
         if (account.getBalance() >= money) {
             return true;
         } else {
-            throw new ATMException(ATMException.ExceptionTYPE.BALANCE_NOT_ENOUGH);
+            throw new ATMException(ATMException.ExceptionType.BALANCE_NOT_ENOUGH);
         }
     }
 
@@ -20,7 +20,7 @@ public class SimpleATMService implements ATMService {
         if (money % 1000 == 0) {
             return true;
         } else {
-            throw new ATMException(ATMException.ExceptionTYPE.AMOUNT_INVALID);
+            throw new ATMException(ATMException.ExceptionType.AMOUNT_INVALID);
         }
     }
 
