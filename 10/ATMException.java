@@ -24,7 +24,7 @@ public class ATMException extends Exception {
     }
 
     // Getter，如果需要取得例外型別
-    public ExceptionTyppe getExceptionType() {
+    public ExceptionType getExceptionType() {
         return exceptionCondition;
     }
 }
